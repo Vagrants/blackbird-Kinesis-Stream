@@ -116,7 +116,7 @@ class ConcreteJob(blackbird.plugins.base.JobBase):
         for key, value in raw_items.items():
             item = KinesisStreamItem(
                 key=key,
-                value=value,
+                value=str(value),
                 host=self.options.get('hostname')
             )
             self._enqueue(item)
