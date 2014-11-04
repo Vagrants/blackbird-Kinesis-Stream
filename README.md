@@ -27,14 +27,14 @@ For example, this plugin doesn't get `KinesisDataFetcher.Time`.
 
 Following values are for per second.
 
-| calculation formula                  | blackbird item key                                    |
-|--------------------------------------|-------------------------------------------------------|
-| PutRecord.Bytes / getting period[^1] | cloudwatch.kinesis.stream.PutRecordBytes.PerSecond    |
-| PutRecord.Success / getting period   | cloudwatch.kinesis.stream.PutRecordSuccess.PerSecond  |
-| GetRecords.Bytes / getting period    | cloudwatch.kinesis.stream.GetRecordsBytes.PerSecond   |
-| GetRecords.Success / getting period  | cloudwatch.kinesis.stream.GetRecordsSuccess.PerSecond |
+| calculation formula                 | blackbird item key                                    |
+|-------------------------------------|-------------------------------------------------------|
+| PutRecord.Bytes / getting period    | cloudwatch.kinesis.stream.PutRecordBytes.PerSecond    |
+| PutRecord.Success / getting period  | cloudwatch.kinesis.stream.PutRecordSuccess.PerSecond  |
+| GetRecords.Bytes / getting period   | cloudwatch.kinesis.stream.GetRecordsBytes.PerSecond   |
+| GetRecords.Success / getting period | cloudwatch.kinesis.stream.GetRecordsSuccess.PerSecond |
 
-[^1]: In other words *getting period* is a value what is written as `interval` in your configuration file.
+In other words *getting period* is a value what is written as `interval` in your configuration file.
 
 
 Configuration file
