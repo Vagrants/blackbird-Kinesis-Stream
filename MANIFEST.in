@@ -1,0 +1,3 @@
+include kinesis_stream.py
+graft scripts
+graft test
