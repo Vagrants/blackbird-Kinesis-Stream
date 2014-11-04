@@ -8,7 +8,7 @@ except ImportError:
 
 setup(
     name='blackbird-kinesis-stream',
-    version='0.1.0',
+    version='0.1.1',
     description='Blackbird plugin Kinesis Stream.',
     author='Vagrants',
     author_email='vagrants@gmail.com',

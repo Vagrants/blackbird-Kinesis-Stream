@@ -1,7 +1,7 @@
 %{!?python_sitelib: %define python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 
 %define name blackbird-kinesis-stream
-%define version 0.1.0
+%define version 0.1.1
 %define unmangled_version %{version}
 %define release 1%{dist}
 %define include_dir /etc/blackbird/conf.d
@@ -49,5 +49,8 @@ rm -rf $RPM_BUILD_ROOT
 %{plugins_dir}/kinesis_stream.*
 
 %changelog
+* Tue Nov 4 2014 ARASHI, Jumpei <jumpei.arashi@arashike.com> - 0.1.1-1
+- Convert values what is stored to queue to str type
+
 * Tue Nov 4 2014 ARASHI, Jumpei <jumpei.arashi@arashike.com> - 0.1.0-1
 - Initial package
