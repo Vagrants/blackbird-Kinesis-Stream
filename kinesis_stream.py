@@ -116,6 +116,7 @@ class ConcreteJob(blackbird.plugins.base.JobBase):
         for key, value in raw_items.items():
             item = KinesisStreamItem(
                 key=key,
+                # It's not good to convert str type on queueing(building) side.
                 value=str(value),
                 host=self.options.get('hostname')
             )
