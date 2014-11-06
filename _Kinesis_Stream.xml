@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-11-06T05:06:26Z</date>
+    <date>2014-11-06T15:43:30Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -22,6 +22,90 @@
                 </application>
             </applications>
             <items>
+                <item>
+                    <name>Kinesis Stream - Average GetRecords Bytes of {$ITM_BBD_KNS_SHT_RNG_PRD} Least Values in {$ITM_BBD_KNS_TIM_PRD} second</name>
+                    <type>15</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>kinesis.stream.GetRecordsBytes.ShortRangeAverage</key>
+                    <delay>300</delay>
+                    <history>7</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>B</units>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>avg(&quot;cloudwatch.kinesis.stream.GetRecords.Bytes.Sum&quot;, #{$ITM_BBD_KNS_SHT_RNG_PRD})</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Kinesis Stream</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Kinesis Stream - Average GetRecords Bytes of {$ITM_BBD_KNS_SHT_RNG_PRD} to {$ITM_BBD_KNS_LNG_RNG_PRD} Least Values in {$ITM_BBD_KNS_TIM_PRD} second</name>
+                    <type>15</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>kinesis.stream.GetRecordsBytes.LongRangeAverage</key>
+                    <delay>300</delay>
+                    <history>7</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>B</units>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>(sum(&quot;cloudwatch.kinesis.stream.GetRecords.Bytes.Sum&quot;, #{$ITM_BBD_KNS_LNG_RNG_PRD})-sum(&quot;cloudwatch.kinesis.stream.GetRecords.Bytes.Sum&quot;, #{$ITM_BBD_KNS_SHT_RNG_PRD}))/({$ITM_BBD_KNS_LNG_RNG_PRD}-{$ITM_BBD_KNS_SHT_RNG_PRD})</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Kinesis Stream</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
                 <item>
                     <name>Kinesis Stream - Average GetRecords IteratorAge Latency in {$ITM_BBD_KNS_TIM_PRD} seconds</name>
                     <type>2</type>
@@ -89,6 +173,258 @@
                     <formula>1</formula>
                     <delay_flex/>
                     <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Kinesis Stream</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Kinesis Stream - Average Number of GetRecords Success of {$ITM_BBD_KNS_SHT_RNG_PRD} to {$ITM_BBD_KNS_LNG_RNG_PRD} Least Values in {$ITM_BBD_KNS_TIM_PRD} second</name>
+                    <type>15</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>kinesis.stream.GetRecordsSuccess.LongRangeAverage</key>
+                    <delay>300</delay>
+                    <history>7</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>(sum(&quot;cloudwatch.kinesis.stream.GetRecords.Success.Sum&quot;, #{$ITM_BBD_KNS_LNG_RNG_PRD})-sum(&quot;cloudwatch.kinesis.stream.GetRecords.Success.Sum&quot;, #{$ITM_BBD_KNS_SHT_RNG_PRD}))/({$ITM_BBD_KNS_LNG_RNG_PRD}-{$ITM_BBD_KNS_SHT_RNG_PRD})</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Kinesis Stream</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Kinesis Stream - Average Number of PutRecord Success of {$ITM_BBD_KNS_SHT_RNG_PRD} to {$ITM_BBD_KNS_LNG_RNG_PRD} Least Values in {$ITM_BBD_KNS_TIM_PRD} second</name>
+                    <type>15</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>kinesis.stream.PutRecordSuccess.LongRangeAverage</key>
+                    <delay>300</delay>
+                    <history>7</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>(sum(&quot;cloudwatch.kinesis.stream.PutRecord.Success.Sum&quot;, #{$ITM_BBD_KNS_LNG_RNG_PRD})-sum(&quot;cloudwatch.kinesis.stream.PutRecord.Success.Sum&quot;, #{$ITM_BBD_KNS_SHT_RNG_PRD}))/({$ITM_BBD_KNS_LNG_RNG_PRD}-{$ITM_BBD_KNS_SHT_RNG_PRD})</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Kinesis Stream</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Kinesis Stream - Average Number o GetRecords Success of {$ITM_BBD_KNS_SHT_RNG_PRD} Least Values in {$ITM_BBD_KNS_TIM_PRD} second</name>
+                    <type>15</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>kinesis.stream.GetRecordsSuccess.ShortRangeAverage</key>
+                    <delay>300</delay>
+                    <history>7</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>avg(&quot;cloudwatch.kinesis.stream.GetRecords.Success.Sum&quot;, #{$ITM_BBD_KNS_SHT_RNG_PRD})</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Kinesis Stream</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Kinesis Stream - Average Number o PutRecord Success of {$ITM_BBD_KNS_SHT_RNG_PRD} Least Values in {$ITM_BBD_KNS_TIM_PRD} second</name>
+                    <type>15</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>kinesis.stream.PutRecordSuccess.ShortRangeAverage</key>
+                    <delay>300</delay>
+                    <history>7</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>avg(&quot;cloudwatch.kinesis.stream.PutRecord.Success.Sum&quot;, #{$ITM_BBD_KNS_SHT_RNG_PRD})</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Kinesis Stream</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Kinesis Stream - Average PutRecord Bytes of {$ITM_BBD_KNS_SHT_RNG_PRD} Least Values in {$ITM_BBD_KNS_TIM_PRD} second</name>
+                    <type>15</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>kinesis.stream.PutRecordBytes.ShortRangeAverage</key>
+                    <delay>300</delay>
+                    <history>7</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>B</units>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>avg(&quot;cloudwatch.kinesis.stream.PutRecord.Bytes.Sum&quot;, #{$ITM_BBD_KNS_SHT_RNG_PRD})</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Kinesis Stream</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Kinesis Stream - Average PutRecord Bytes of {$ITM_BBD_KNS_SHT_RNG_PRD} to {$ITM_BBD_KNS_LNG_RNG_PRD} Least Values in {$ITM_BBD_KNS_TIM_PRD} second</name>
+                    <type>15</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>kinesis.stream.PutRecordBytes.LongRangeAverage</key>
+                    <delay>300</delay>
+                    <history>7</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>B</units>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>(sum(&quot;cloudwatch.kinesis.stream.PutRecord.Bytes.Sum&quot;, #{$ITM_BBD_KNS_LNG_RNG_PRD})-sum(&quot;cloudwatch.kinesis.stream.PutRecord.Bytes.Sum&quot;, #{$ITM_BBD_KNS_SHT_RNG_PRD}))/({$ITM_BBD_KNS_LNG_RNG_PRD}-{$ITM_BBD_KNS_SHT_RNG_PRD})</params>
                     <ipmi_sensor/>
                     <data_type>0</data_type>
                     <authtype>0</authtype>
@@ -488,6 +824,14 @@
             <discovery_rules/>
             <macros>
                 <macro>
+                    <macro>{$ITM_BBD_KNS_LNG_RNG_PRD}</macro>
+                    <value>12</value>
+                </macro>
+                <macro>
+                    <macro>{$ITM_BBD_KNS_SHT_RNG_PRD}</macro>
+                    <value>3</value>
+                </macro>
+                <macro>
                     <macro>{$ITM_BBD_KNS_TIM_PRD}</macro>
                     <value>300</value>
                 </macro>
@@ -517,7 +861,7 @@
                 </macro>
                 <macro>
                     <macro>{$TRG_BBD_KNS_DIF_GET_BYT_THS_AVG}</macro>
-                    <value>40</value>
+                    <value>60</value>
                 </macro>
                 <macro>
                     <macro>{$TRG_BBD_KNS_DIF_GET_BYT_THS_HGH}</macro>
@@ -525,11 +869,11 @@
                 </macro>
                 <macro>
                     <macro>{$TRG_BBD_KNS_DIF_GET_BYT_THS_WRN}</macro>
-                    <value>20</value>
+                    <value>40</value>
                 </macro>
                 <macro>
                     <macro>{$TRG_BBD_KNS_DIF_GET_SCS_THS_AVG}</macro>
-                    <value>40</value>
+                    <value>60</value>
                 </macro>
                 <macro>
                     <macro>{$TRG_BBD_KNS_DIF_GET_SCS_THS_HGH}</macro>
@@ -537,11 +881,11 @@
                 </macro>
                 <macro>
                     <macro>{$TRG_BBD_KNS_DIF_GET_SCS_THS_WRN}</macro>
-                    <value>20</value>
+                    <value>40</value>
                 </macro>
                 <macro>
                     <macro>{$TRG_BBD_KNS_DIF_PUT_BYT_THS_AVG}</macro>
-                    <value>40</value>
+                    <value>60</value>
                 </macro>
                 <macro>
                     <macro>{$TRG_BBD_KNS_DIF_PUT_BYT_THS_HGH}</macro>
@@ -549,11 +893,11 @@
                 </macro>
                 <macro>
                     <macro>{$TRG_BBD_KNS_DIF_PUT_BYT_THS_WRN}</macro>
-                    <value>20</value>
+                    <value>40</value>
                 </macro>
                 <macro>
                     <macro>{$TRG_BBD_KNS_DIF_PUT_SCS_THS_AVG}</macro>
-                    <value>40</value>
+                    <value>60</value>
                 </macro>
                 <macro>
                     <macro>{$TRG_BBD_KNS_DIF_PUT_SCS_THS_HGH}</macro>
@@ -561,7 +905,7 @@
                 </macro>
                 <macro>
                     <macro>{$TRG_BBD_KNS_DIF_PUT_SCS_THS_WRN}</macro>
-                    <value>20</value>
+                    <value>40</value>
                 </macro>
             </macros>
             <templates/>
@@ -608,7 +952,7 @@
                             <dynamic>0</dynamic>
                             <sort_triggers>0</sort_triggers>
                             <resource>
-                                <name>Kinesis Stream - Get/Put Latency in {$ITM_BBD_KNS_TIM_PRD} seconds</name>
+                                <name>Kinesis Stream - Get/Put Latency</name>
                                 <host>_Kinesis_Stream</host>
                             </resource>
                             <application/>
@@ -629,7 +973,7 @@
                             <dynamic>0</dynamic>
                             <sort_triggers>0</sort_triggers>
                             <resource>
-                                <name>Kinesis Stream - Succeed Records per second</name>
+                                <name>Kinesis Stream - Succeed Records</name>
                                 <host>_Kinesis_Stream</host>
                             </resource>
                             <application/>
@@ -721,8 +1065,8 @@
             </dependencies>
         </trigger>
         <trigger>
-            <expression>{_Kinesis_Stream:cloudwatch.kinesis.stream.GetRecords.Bytes.Sum.abschange()}/{_Kinesis_Stream:cloudwatch.kinesis.stream.GetRecords.Bytes.Sum.prev()}*100&gt;{$TRG_BBD_KNS_DIF_GET_BYT_THS_AVG}</expression>
-            <name>Kinesis Stream - Diff of GetRecords Bytes between the Previous Value is over {$TRG_BBD_KNS_DIF_GET_BYT_THS_AVG}%!!!!</name>
+            <expression>({_Kinesis_Stream:kinesis.stream.GetRecordsBytes.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.GetRecordsBytes.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.GetRecordsBytes.LongRangeAverage.last(#1)}*100&gt;{$TRG_BBD_KNS_DIF_GET_BYT_THS_AVG} | ({_Kinesis_Stream:kinesis.stream.GetRecordsBytes.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.GetRecordsBytes.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.GetRecordsBytes.LongRangeAverage.last(#1)}*100&lt;0-{$TRG_BBD_KNS_DIF_GET_BYT_THS_AVG}</expression>
+            <name>Kinesis Stream - Diff GetRecords Bytes between Previous Value is over {$TRG_BBD_KNS_DIF_GET_BYT_THS_AVG}%!!!!</name>
             <url/>
             <status>0</status>
             <priority>3</priority>
@@ -730,14 +1074,14 @@
             <type>0</type>
             <dependencies>
                 <dependency>
-                    <name>Kinesis Stream - Diff of GetRecords Bytes between the Previous Value is over {$TRG_BBD_KNS_DIF_GET_BYT_THS_HGH}%!!!!!</name>
-                    <expression>{_Kinesis_Stream:cloudwatch.kinesis.stream.GetRecords.Bytes.Sum.abschange()}/{_Kinesis_Stream:cloudwatch.kinesis.stream.GetRecords.Bytes.Sum.prev()}*100&gt;{$TRG_BBD_KNS_DIF_GET_BYT_THS_HGH}</expression>
+                    <name>Kinesis Stream - Diff GetRecords Bytes between Previous Value is over {$TRG_BBD_KNS_DIF_GET_BYT_THS_HGH}%!!!!!</name>
+                    <expression>({_Kinesis_Stream:kinesis.stream.GetRecordsBytes.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.GetRecordsBytes.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.GetRecordsBytes.LongRangeAverage.last(#1)}*100&gt;{$TRG_BBD_KNS_DIF_GET_BYT_THS_HGH} | ({_Kinesis_Stream:kinesis.stream.GetRecordsBytes.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.GetRecordsBytes.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.GetRecordsBytes.LongRangeAverage.last(#1)}*100&lt;0-{$TRG_BBD_KNS_DIF_GET_BYT_THS_HGH}</expression>
                 </dependency>
             </dependencies>
         </trigger>
         <trigger>
-            <expression>{_Kinesis_Stream:cloudwatch.kinesis.stream.GetRecords.Bytes.Sum.abschange()}/{_Kinesis_Stream:cloudwatch.kinesis.stream.GetRecords.Bytes.Sum.prev()}*100&gt;{$TRG_BBD_KNS_DIF_GET_BYT_THS_HGH}</expression>
-            <name>Kinesis Stream - Diff of GetRecords Bytes between the Previous Value is over {$TRG_BBD_KNS_DIF_GET_BYT_THS_HGH}%!!!!!</name>
+            <expression>({_Kinesis_Stream:kinesis.stream.GetRecordsBytes.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.GetRecordsBytes.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.GetRecordsBytes.LongRangeAverage.last(#1)}*100&gt;{$TRG_BBD_KNS_DIF_GET_BYT_THS_HGH} | ({_Kinesis_Stream:kinesis.stream.GetRecordsBytes.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.GetRecordsBytes.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.GetRecordsBytes.LongRangeAverage.last(#1)}*100&lt;0-{$TRG_BBD_KNS_DIF_GET_BYT_THS_HGH}</expression>
+            <name>Kinesis Stream - Diff GetRecords Bytes between Previous Value is over {$TRG_BBD_KNS_DIF_GET_BYT_THS_HGH}%!!!!!</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
@@ -746,8 +1090,8 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{_Kinesis_Stream:cloudwatch.kinesis.stream.GetRecords.Bytes.Sum.abschange()}/{_Kinesis_Stream:cloudwatch.kinesis.stream.GetRecords.Bytes.Sum.prev()}*100&gt;{$TRG_BBD_KNS_DIF_GET_BYT_THS_WRN}</expression>
-            <name>Kinesis Stream - Diff of GetRecords Bytes between the Previous Value is over {$TRG_BBD_KNS_DIF_GET_BYT_THS_WRN}%!!!</name>
+            <expression>({_Kinesis_Stream:kinesis.stream.GetRecordsBytes.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.GetRecordsBytes.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.GetRecordsBytes.LongRangeAverage.last(#1)}*100&gt;{$TRG_BBD_KNS_DIF_GET_BYT_THS_WRN} | ({_Kinesis_Stream:kinesis.stream.GetRecordsBytes.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.GetRecordsBytes.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.GetRecordsBytes.LongRangeAverage.last(#1)}*100&lt;0-{$TRG_BBD_KNS_DIF_GET_BYT_THS_WRN}</expression>
+            <name>Kinesis Stream - Diff GetRecords Bytes between Previous Value is over {$TRG_BBD_KNS_DIF_GET_BYT_THS_WRN}%!!!</name>
             <url/>
             <status>0</status>
             <priority>2</priority>
@@ -755,14 +1099,14 @@
             <type>0</type>
             <dependencies>
                 <dependency>
-                    <name>Kinesis Stream - Diff of GetRecords Bytes between the Previous Value is over {$TRG_BBD_KNS_DIF_GET_BYT_THS_AVG}%!!!!</name>
-                    <expression>{_Kinesis_Stream:cloudwatch.kinesis.stream.GetRecords.Bytes.Sum.abschange()}/{_Kinesis_Stream:cloudwatch.kinesis.stream.GetRecords.Bytes.Sum.prev()}*100&gt;{$TRG_BBD_KNS_DIF_GET_BYT_THS_AVG}</expression>
+                    <name>Kinesis Stream - Diff GetRecords Bytes between Previous Value is over {$TRG_BBD_KNS_DIF_GET_BYT_THS_AVG}%!!!!</name>
+                    <expression>({_Kinesis_Stream:kinesis.stream.GetRecordsBytes.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.GetRecordsBytes.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.GetRecordsBytes.LongRangeAverage.last(#1)}*100&gt;{$TRG_BBD_KNS_DIF_GET_BYT_THS_AVG} | ({_Kinesis_Stream:kinesis.stream.GetRecordsBytes.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.GetRecordsBytes.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.GetRecordsBytes.LongRangeAverage.last(#1)}*100&lt;0-{$TRG_BBD_KNS_DIF_GET_BYT_THS_AVG}</expression>
                 </dependency>
             </dependencies>
         </trigger>
         <trigger>
-            <expression>{_Kinesis_Stream:cloudwatch.kinesis.stream.PutRecord.Bytes.Sum.abschange()}/{_Kinesis_Stream:cloudwatch.kinesis.stream.PutRecord.Bytes.Sum.prev()}*100&gt;{$TRG_BBD_KNS_DIF_PUT_BYT_THS_AVG}</expression>
-            <name>Kinesis Stream - Diff of PutRecord Bytes between the Previous Value is over {$TRG_BBD_KNS_DIF_PUT_BYT_THS_AVG}%!!!!</name>
+            <expression>({_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.LongRangeAverage.last(#1)}*100&gt;{$TRG_BBD_KNS_DIF_GET_SCS_THS_AVG} | ({_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.LongRangeAverage.last(#1)}*100&lt;0-{$TRG_BBD_KNS_DIF_GET_SCS_THS_AVG}</expression>
+            <name>Kinesis Stream - Diff GetRecords Success between Previous Value is over {$TRG_BBD_KNS_DIF_GET_SCS_THS_AVG}%!!!!</name>
             <url/>
             <status>0</status>
             <priority>3</priority>
@@ -770,14 +1114,14 @@
             <type>0</type>
             <dependencies>
                 <dependency>
-                    <name>Kinesis Stream - Diff of PutRecord Bytes between the Previous Value is over {$TRG_BBD_KNS_DIF_PUT_BYT_THS_HGH}%!!!!</name>
-                    <expression>{_Kinesis_Stream:cloudwatch.kinesis.stream.PutRecord.Bytes.Sum.abschange()}/{_Kinesis_Stream:cloudwatch.kinesis.stream.PutRecord.Bytes.Sum.prev()}*100&gt;{$TRG_BBD_KNS_DIF_PUT_BYT_THS_HGH}</expression>
+                    <name>Kinesis Stream - Diff GetRecords Success between Previous Value is over {$TRG_BBD_KNS_DIF_GET_SCS_THS_HGH}%!!!!!</name>
+                    <expression>({_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.LongRangeAverage.last(#1)}*100&gt;{$TRG_BBD_KNS_DIF_GET_SCS_THS_HGH} | ({_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.LongRangeAverage.last(#1)}*100&lt;0-{$TRG_BBD_KNS_DIF_GET_SCS_THS_HGH}</expression>
                 </dependency>
             </dependencies>
         </trigger>
         <trigger>
-            <expression>{_Kinesis_Stream:cloudwatch.kinesis.stream.PutRecord.Bytes.Sum.abschange()}/{_Kinesis_Stream:cloudwatch.kinesis.stream.PutRecord.Bytes.Sum.prev()}*100&gt;{$TRG_BBD_KNS_DIF_PUT_BYT_THS_HGH}</expression>
-            <name>Kinesis Stream - Diff of PutRecord Bytes between the Previous Value is over {$TRG_BBD_KNS_DIF_PUT_BYT_THS_HGH}%!!!!</name>
+            <expression>({_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.LongRangeAverage.last(#1)}*100&gt;{$TRG_BBD_KNS_DIF_GET_SCS_THS_HGH} | ({_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.LongRangeAverage.last(#1)}*100&lt;0-{$TRG_BBD_KNS_DIF_GET_SCS_THS_HGH}</expression>
+            <name>Kinesis Stream - Diff GetRecords Success between Previous Value is over {$TRG_BBD_KNS_DIF_GET_SCS_THS_HGH}%!!!!!</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
@@ -786,8 +1130,8 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{_Kinesis_Stream:cloudwatch.kinesis.stream.PutRecord.Bytes.Sum.abschange()}/{_Kinesis_Stream:cloudwatch.kinesis.stream.PutRecord.Bytes.Sum.prev()}*100&gt;{$TRG_BBD_KNS_DIF_PUT_BYT_THS_WRN}</expression>
-            <name>Kinesis Stream - Diff of PutRecord Bytes between the Previous Value is over {$TRG_BBD_KNS_DIF_PUT_BYT_THS_WRN}%!!!</name>
+            <expression>({_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.LongRangeAverage.last(#1)}*100&gt;{$TRG_BBD_KNS_DIF_GET_SCS_THS_WRN} | ({_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.LongRangeAverage.last(#1)}*100&lt;0-{$TRG_BBD_KNS_DIF_GET_SCS_THS_WRN}</expression>
+            <name>Kinesis Stream - Diff GetRecords Success between Previous Value is over {$TRG_BBD_KNS_DIF_GET_SCS_THS_WRN}%!!!</name>
             <url/>
             <status>0</status>
             <priority>2</priority>
@@ -795,14 +1139,14 @@
             <type>0</type>
             <dependencies>
                 <dependency>
-                    <name>Kinesis Stream - Diff of PutRecord Bytes between the Previous Value is over {$TRG_BBD_KNS_DIF_PUT_BYT_THS_AVG}%!!!!</name>
-                    <expression>{_Kinesis_Stream:cloudwatch.kinesis.stream.PutRecord.Bytes.Sum.abschange()}/{_Kinesis_Stream:cloudwatch.kinesis.stream.PutRecord.Bytes.Sum.prev()}*100&gt;{$TRG_BBD_KNS_DIF_PUT_BYT_THS_AVG}</expression>
+                    <name>Kinesis Stream - Diff GetRecords Success between Previous Value is over {$TRG_BBD_KNS_DIF_GET_SCS_THS_AVG}%!!!!</name>
+                    <expression>({_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.LongRangeAverage.last(#1)}*100&gt;{$TRG_BBD_KNS_DIF_GET_SCS_THS_AVG} | ({_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.GetRecordsSuccess.LongRangeAverage.last(#1)}*100&lt;0-{$TRG_BBD_KNS_DIF_GET_SCS_THS_AVG}</expression>
                 </dependency>
             </dependencies>
         </trigger>
         <trigger>
-            <expression>{_Kinesis_Stream:cloudwatch.kinesis.stream.GetRecords.Success.Sum.abschange()}/{_Kinesis_Stream:cloudwatch.kinesis.stream.GetRecords.Success.Sum.prev()}*100&gt;{$TRG_BBD_KNS_DIF_GET_SCS_THS_AVG}</expression>
-            <name>Kinesis Stream - Number of Succeeded GetRecords Diff between the Previous Value is over {$TRG_BBD_KNS_DIF_GET_SCS_THS_AVG}%!!!!</name>
+            <expression>({_Kinesis_Stream:kinesis.stream.PutRecordBytes.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.PutRecordBytes.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.PutRecordBytes.LongRangeAverage.last(#1)}*100&gt;{$TRG_BBD_KNS_DIF_PUT_BYT_THS_AVG} | ({_Kinesis_Stream:kinesis.stream.PutRecordBytes.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.PutRecordBytes.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.PutRecordBytes.LongRangeAverage.last(#1)}*100&lt;0-{$TRG_BBD_KNS_DIF_PUT_BYT_THS_AVG}</expression>
+            <name>Kinesis Stream - Diff PutRecord Bytes between Previous Value is over {$TRG_BBD_KNS_DIF_PUT_BYT_THS_AVG}%!!!!</name>
             <url/>
             <status>0</status>
             <priority>3</priority>
@@ -810,14 +1154,14 @@
             <type>0</type>
             <dependencies>
                 <dependency>
-                    <name>Kinesis Stream - Number of Succeeded GetRecords Diff between the Previous Value is over {$TRG_BBD_KNS_DIF_GET_SCS_THS_HGH}%!!!!!</name>
-                    <expression>{_Kinesis_Stream:cloudwatch.kinesis.stream.GetRecords.Success.Sum.abschange()}/{_Kinesis_Stream:cloudwatch.kinesis.stream.GetRecords.Success.Sum.prev()}*100&gt;{$TRG_BBD_KNS_DIF_GET_SCS_THS_HGH}</expression>
+                    <name>Kinesis Stream - Diff PutRecord Bytes between Previous Value is over {$TRG_BBD_KNS_DIF_PUT_BYT_THS_HGH}%!!!!!</name>
+                    <expression>({_Kinesis_Stream:kinesis.stream.PutRecordBytes.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.PutRecordBytes.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.PutRecordBytes.LongRangeAverage.last(#1)}*100&gt;{$TRG_BBD_KNS_DIF_PUT_BYT_THS_HGH} | ({_Kinesis_Stream:kinesis.stream.PutRecordBytes.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.PutRecordBytes.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.PutRecordBytes.LongRangeAverage.last(#1)}*100&lt;0-{$TRG_BBD_KNS_DIF_PUT_BYT_THS_HGH}</expression>
                 </dependency>
             </dependencies>
         </trigger>
         <trigger>
-            <expression>{_Kinesis_Stream:cloudwatch.kinesis.stream.GetRecords.Success.Sum.abschange()}/{_Kinesis_Stream:cloudwatch.kinesis.stream.GetRecords.Success.Sum.prev()}*100&gt;{$TRG_BBD_KNS_DIF_GET_SCS_THS_HGH}</expression>
-            <name>Kinesis Stream - Number of Succeeded GetRecords Diff between the Previous Value is over {$TRG_BBD_KNS_DIF_GET_SCS_THS_HGH}%!!!!!</name>
+            <expression>({_Kinesis_Stream:kinesis.stream.PutRecordBytes.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.PutRecordBytes.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.PutRecordBytes.LongRangeAverage.last(#1)}*100&gt;{$TRG_BBD_KNS_DIF_PUT_BYT_THS_HGH} | ({_Kinesis_Stream:kinesis.stream.PutRecordBytes.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.PutRecordBytes.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.PutRecordBytes.LongRangeAverage.last(#1)}*100&lt;0-{$TRG_BBD_KNS_DIF_PUT_BYT_THS_HGH}</expression>
+            <name>Kinesis Stream - Diff PutRecord Bytes between Previous Value is over {$TRG_BBD_KNS_DIF_PUT_BYT_THS_HGH}%!!!!!</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
@@ -826,8 +1170,8 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{_Kinesis_Stream:cloudwatch.kinesis.stream.GetRecords.Success.Sum.abschange()}/{_Kinesis_Stream:cloudwatch.kinesis.stream.GetRecords.Success.Sum.prev()}*100&gt;{$TRG_BBD_KNS_DIF_GET_SCS_THS_WRN}</expression>
-            <name>Kinesis Stream - Number of Succeeded GetRecords Diff between the Previous Value is over {$TRG_BBD_KNS_DIF_GET_SCS_THS_WRN}%!!!</name>
+            <expression>({_Kinesis_Stream:kinesis.stream.PutRecordBytes.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.PutRecordBytes.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.PutRecordBytes.LongRangeAverage.last(#1)}*100&gt;{$TRG_BBD_KNS_DIF_PUT_BYT_THS_WRN} | ({_Kinesis_Stream:kinesis.stream.PutRecordBytes.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.PutRecordBytes.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.PutRecordBytes.LongRangeAverage.last(#1)}*100&lt;0-{$TRG_BBD_KNS_DIF_PUT_BYT_THS_WRN}</expression>
+            <name>Kinesis Stream - Diff PutRecord Bytes between Previous Value is over {$TRG_BBD_KNS_DIF_PUT_BYT_THS_WRN}%!!!</name>
             <url/>
             <status>0</status>
             <priority>2</priority>
@@ -835,14 +1179,14 @@
             <type>0</type>
             <dependencies>
                 <dependency>
-                    <name>Kinesis Stream - Number of Succeeded GetRecords Diff between the Previous Value is over {$TRG_BBD_KNS_DIF_GET_SCS_THS_AVG}%!!!!</name>
-                    <expression>{_Kinesis_Stream:cloudwatch.kinesis.stream.GetRecords.Success.Sum.abschange()}/{_Kinesis_Stream:cloudwatch.kinesis.stream.GetRecords.Success.Sum.prev()}*100&gt;{$TRG_BBD_KNS_DIF_GET_SCS_THS_AVG}</expression>
+                    <name>Kinesis Stream - Diff PutRecord Bytes between Previous Value is over {$TRG_BBD_KNS_DIF_PUT_BYT_THS_AVG}%!!!!</name>
+                    <expression>({_Kinesis_Stream:kinesis.stream.PutRecordBytes.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.PutRecordBytes.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.PutRecordBytes.LongRangeAverage.last(#1)}*100&gt;{$TRG_BBD_KNS_DIF_PUT_BYT_THS_AVG} | ({_Kinesis_Stream:kinesis.stream.PutRecordBytes.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.PutRecordBytes.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.PutRecordBytes.LongRangeAverage.last(#1)}*100&lt;0-{$TRG_BBD_KNS_DIF_PUT_BYT_THS_AVG}</expression>
                 </dependency>
             </dependencies>
         </trigger>
         <trigger>
-            <expression>{_Kinesis_Stream:cloudwatch.kinesis.stream.PutRecord.Success.Sum.abschange()}/{_Kinesis_Stream:cloudwatch.kinesis.stream.PutRecord.Success.Sum.prev()}*100&gt;{$TRG_BBD_KNS_DIF_PUT_SCS_THS_AVG}</expression>
-            <name>Kinesis Stream - Number of Succeeded PutRecord Diff between the Previous Value is over {$TRG_BBD_KNS_DIF_PUT_SCS_THS_AVG}%!!!!</name>
+            <expression>({_Kinesis_Stream:kinesis.stream.PutRecordSuccess.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.PutRecordSuccess.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.PutRecordSuccess.LongRangeAverage.last(#1)}*100&gt;{$TRG_BBD_KNS_DIF_PUT_SCS_THS_AVG} | ({_Kinesis_Stream:kinesis.stream.PutRecordSuccess.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.PutRecordSuccess.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.PutRecordSuccess.LongRangeAverage.last(#1)}*100&lt;0-{$TRG_BBD_KNS_DIF_PUT_SCS_THS_AVG}</expression>
+            <name>Kinesis Stream - Diff PutRecord Success between Previous Value is over {$TRG_BBD_KNS_DIF_PUT_SCS_THS_AVG}%!!!!</name>
             <url/>
             <status>0</status>
             <priority>3</priority>
@@ -850,14 +1194,14 @@
             <type>0</type>
             <dependencies>
                 <dependency>
-                    <name>Kinesis Stream - Number of Succeeded PutRecord Diff between the Previous Value is over {$TRG_BBD_KNS_DIF_PUT_SCS_THS_HGH}%!!!!!</name>
-                    <expression>{_Kinesis_Stream:cloudwatch.kinesis.stream.PutRecord.Success.Sum.abschange()}/{_Kinesis_Stream:cloudwatch.kinesis.stream.PutRecord.Success.Sum.prev()}*100&gt;{$TRG_BBD_KNS_DIF_PUT_SCS_THS_HGH}</expression>
+                    <name>Kinesis Stream - Diff PutRecord Success between Previous Value is over {$TRG_BBD_KNS_DIF_PUT_SCS_THS_HGH}%!!!!!</name>
+                    <expression>({_Kinesis_Stream:kinesis.stream.PutRecordSuccess.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.PutRecordSuccess.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.PutRecordSuccess.LongRangeAverage.last(#1)}*100&gt;{$TRG_BBD_KNS_DIF_PUT_SCS_THS_HGH} | ({_Kinesis_Stream:kinesis.stream.PutRecordSuccess.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.PutRecordSuccess.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.PutRecordSuccess.LongRangeAverage.last(#1)}*100&lt;0-{$TRG_BBD_KNS_DIF_PUT_SCS_THS_HGH}</expression>
                 </dependency>
             </dependencies>
         </trigger>
         <trigger>
-            <expression>{_Kinesis_Stream:cloudwatch.kinesis.stream.PutRecord.Success.Sum.abschange()}/{_Kinesis_Stream:cloudwatch.kinesis.stream.PutRecord.Success.Sum.prev()}*100&gt;{$TRG_BBD_KNS_DIF_PUT_SCS_THS_HGH}</expression>
-            <name>Kinesis Stream - Number of Succeeded PutRecord Diff between the Previous Value is over {$TRG_BBD_KNS_DIF_PUT_SCS_THS_HGH}%!!!!!</name>
+            <expression>({_Kinesis_Stream:kinesis.stream.PutRecordSuccess.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.PutRecordSuccess.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.PutRecordSuccess.LongRangeAverage.last(#1)}*100&gt;{$TRG_BBD_KNS_DIF_PUT_SCS_THS_HGH} | ({_Kinesis_Stream:kinesis.stream.PutRecordSuccess.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.PutRecordSuccess.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.PutRecordSuccess.LongRangeAverage.last(#1)}*100&lt;0-{$TRG_BBD_KNS_DIF_PUT_SCS_THS_HGH}</expression>
+            <name>Kinesis Stream - Diff PutRecord Success between Previous Value is over {$TRG_BBD_KNS_DIF_PUT_SCS_THS_HGH}%!!!!!</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
@@ -866,8 +1210,8 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{_Kinesis_Stream:cloudwatch.kinesis.stream.PutRecord.Success.Sum.abschange()}/{_Kinesis_Stream:cloudwatch.kinesis.stream.PutRecord.Success.Sum.prev()}*100&gt;{$TRG_BBD_KNS_DIF_PUT_SCS_THS_WRN}</expression>
-            <name>Kinesis Stream - Number of Succeeded PutRecord Diff between the Previous Value is over {$TRG_BBD_KNS_DIF_PUT_SCS_THS_WRN}%!!!</name>
+            <expression>({_Kinesis_Stream:kinesis.stream.PutRecordSuccess.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.PutRecordSuccess.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.PutRecordSuccess.LongRangeAverage.last(#1)}*100&gt;{$TRG_BBD_KNS_DIF_PUT_SCS_THS_WRN} | ({_Kinesis_Stream:kinesis.stream.PutRecordSuccess.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.PutRecordSuccess.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.PutRecordSuccess.LongRangeAverage.last(#1)}*100&lt;0-{$TRG_BBD_KNS_DIF_PUT_SCS_THS_WRN}</expression>
+            <name>Kinesis Stream - Diff PutRecord Success between Previous Value is over {$TRG_BBD_KNS_DIF_PUT_SCS_THS_WRN}%!!!</name>
             <url/>
             <status>0</status>
             <priority>2</priority>
@@ -875,15 +1219,15 @@
             <type>0</type>
             <dependencies>
                 <dependency>
-                    <name>Kinesis Stream - Number of Succeeded PutRecord Diff between the Previous Value is over {$TRG_BBD_KNS_DIF_PUT_SCS_THS_AVG}%!!!!</name>
-                    <expression>{_Kinesis_Stream:cloudwatch.kinesis.stream.PutRecord.Success.Sum.abschange()}/{_Kinesis_Stream:cloudwatch.kinesis.stream.PutRecord.Success.Sum.prev()}*100&gt;{$TRG_BBD_KNS_DIF_PUT_SCS_THS_AVG}</expression>
+                    <name>Kinesis Stream - Diff PutRecord Success between Previous Value is over {$TRG_BBD_KNS_DIF_PUT_SCS_THS_AVG}%!!!!</name>
+                    <expression>({_Kinesis_Stream:kinesis.stream.PutRecordSuccess.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.PutRecordSuccess.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.PutRecordSuccess.LongRangeAverage.last(#1)}*100&gt;{$TRG_BBD_KNS_DIF_PUT_SCS_THS_AVG} | ({_Kinesis_Stream:kinesis.stream.PutRecordSuccess.ShortRangeAverage.last(#1)}-{_Kinesis_Stream:kinesis.stream.PutRecordSuccess.LongRangeAverage.last(#1)})/{_Kinesis_Stream:kinesis.stream.PutRecordSuccess.LongRangeAverage.last(#1)}*100&lt;0-{$TRG_BBD_KNS_DIF_PUT_SCS_THS_AVG}</expression>
                 </dependency>
             </dependencies>
         </trigger>
     </triggers>
     <graphs>
         <graph>
-            <name>Kinesis Stream - Get/Put Latency in {$ITM_BBD_KNS_TIM_PRD} seconds</name>
+            <name>Kinesis Stream - Get/Put Latency</name>
             <width>900</width>
             <height>200</height>
             <yaxismin>0.0000</yaxismin>
@@ -927,7 +1271,71 @@
             </graph_items>
         </graph>
         <graph>
-            <name>Kinesis Stream - Succeed Records per second</name>
+            <name>Kinesis Stream - GetRecords Latency</name>
+            <width>900</width>
+            <height>200</height>
+            <yaxismin>0.0000</yaxismin>
+            <yaxismax>100.0000</yaxismax>
+            <show_work_period>1</show_work_period>
+            <show_triggers>1</show_triggers>
+            <type>0</type>
+            <show_legend>1</show_legend>
+            <show_3d>0</show_3d>
+            <percent_left>0.0000</percent_left>
+            <percent_right>0.0000</percent_right>
+            <ymin_type_1>1</ymin_type_1>
+            <ymax_type_1>0</ymax_type_1>
+            <ymin_item_1>0</ymin_item_1>
+            <ymax_item_1>0</ymax_item_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>0</sortorder>
+                    <drawtype>2</drawtype>
+                    <color>1ABC9C</color>
+                    <yaxisside>1</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>_Kinesis_Stream</host>
+                        <key>cloudwatch.kinesis.stream.GetRecords.Latency.Average</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>Kinesis Stream - PutRecord Latency</name>
+            <width>900</width>
+            <height>200</height>
+            <yaxismin>0.0000</yaxismin>
+            <yaxismax>100.0000</yaxismax>
+            <show_work_period>1</show_work_period>
+            <show_triggers>1</show_triggers>
+            <type>0</type>
+            <show_legend>1</show_legend>
+            <show_3d>0</show_3d>
+            <percent_left>0.0000</percent_left>
+            <percent_right>0.0000</percent_right>
+            <ymin_type_1>1</ymin_type_1>
+            <ymax_type_1>0</ymax_type_1>
+            <ymin_item_1>0</ymin_item_1>
+            <ymax_item_1>0</ymax_item_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>0</sortorder>
+                    <drawtype>2</drawtype>
+                    <color>F1C40F</color>
+                    <yaxisside>1</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>_Kinesis_Stream</host>
+                        <key>cloudwatch.kinesis.stream.PutRecord.Latency.Average</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>Kinesis Stream - Succeed Records</name>
             <width>900</width>
             <height>200</height>
             <yaxismin>0.0000</yaxismin>
@@ -953,7 +1361,7 @@
                     <type>0</type>
                     <item>
                         <host>_Kinesis_Stream</host>
-                        <key>cloudwatch.kinesis.stream.GetRecordsSuccess.PerSecond</key>
+                        <key>cloudwatch.kinesis.stream.GetRecords.Success.Sum</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -965,7 +1373,7 @@
                     <type>0</type>
                     <item>
                         <host>_Kinesis_Stream</host>
-                        <key>cloudwatch.kinesis.stream.PutRecordSuccess.PerSecond</key>
+                        <key>cloudwatch.kinesis.stream.PutRecord.Success.Sum</key>
                     </item>
                 </graph_item>
             </graph_items>
